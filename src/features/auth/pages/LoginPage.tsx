@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { useAuth } from "../useAuth";
 import "./LoginPage.css";
+import { ROLE_ROUTE_MAP } from "../../../config/routes";
+import type { AuthData } from "../auth.types";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState<string>("");
@@ -13,6 +16,7 @@ function LoginPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,10 +43,12 @@ function LoginPage() {
     setIsLoading(true);
 
     try {
-      await login({
+      const auth: AuthData = await login({
         email: email.trim(),
         password,
       });
+      const route = ROLE_ROUTE_MAP[auth.role];
+      navigate(`/${route}/dashboard`);
     } catch (err) {
       console.error(err);
       setLoginError("Invalid email or password");
