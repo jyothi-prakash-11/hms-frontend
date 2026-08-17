@@ -1,7 +1,9 @@
 import { StatCard } from "./components/StatCard";
 import { UserManagement } from "./components/UserManagement";
+import { AnalyticsCharts } from "./components/AnalyticsCharts";
 import "./AdminDashboard.css";
 import "./UserManagement.css";
+import "./AnalyticsCharts.css";
 
 export default function AdminDashboard() {
   const stats = [
@@ -23,6 +25,8 @@ export default function AdminDashboard() {
           <StatCard key={stat.title} {...stat} />
         ))}
       </div>
+
+      <AnalyticsCharts />
 
       <UserManagement />
     </div>
