@@ -1,5 +1,5 @@
 import api from "../../config/api";
-import { AdminDashboardData, DashboardApiResponse } from "./admin.types";
+import type { AdminDashboardData, DashboardApiResponse } from "./admin.types";
 
 export const adminApi = {
   getDashboardData: async (): Promise<AdminDashboardData> => {

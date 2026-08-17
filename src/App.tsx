@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "./features/auth/pages/LoginPage";
 import { Layout } from "./components/layout/Layout";
-import AdminDashboard from "./features/admin/AdminDashboard";
+import AdminDashboard from "./features/admin/AdminDashBoard";
 import { ProtectedRoute } from "./features/auth/ProtectedRoute";
 
 function App() {
