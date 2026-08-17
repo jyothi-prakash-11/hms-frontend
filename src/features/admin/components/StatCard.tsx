@@ -1,25 +1,26 @@
-import React from "react";
+import { ReactNode } from "react";
+import "./StatCard.css";
 
 interface StatCardProps {
   title: string;
-  value: string | number;
-  icon: string;
-  color: string;
+  value: number;
+  icon?: ReactNode;
+  variant?: "default" | "warning";
 }
 
-export const StatCard: React.FC<StatCardProps> = ({
+export function StatCard({
   title,
   value,
   icon,
-  color,
-}) => {
+  variant = "default",
+}: StatCardProps) {
   return (
-    <div className={`stat-card stat-card-${color}`}>
-      <div className="stat-icon">{icon}</div>
-      <div className="stat-content">
-        <p className="stat-title">{title}</p>
-        <p className="stat-value">{value}</p>
+    <article className={`stat-card stat-card--${variant}`}>
+      {icon && <div className="stat-card__icon">{icon}</div>}
+      <div className="stat-card__content">
+        <h3 className="stat-card__title">{title}</h3>
+        <p className="stat-card__value">{value}</p>
       </div>
-    </div>
+    </article>
   );
-};
+}
