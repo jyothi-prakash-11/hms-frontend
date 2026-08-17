@@ -195,3 +195,75 @@
 .btn-secondary:hover {
   background-color: #d1d5db;
 }
+
+@media (max-width: 768px) {
+  .quick-actions-section {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .actions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .action-card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .action-icon {
+    font-size: 1.5rem;
+  }
+
+  .action-arrow {
+    display: none;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .settings-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-actions-section {
+    padding: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-content h4 {
+    font-size: 0.85rem;
+  }
+
+  .action-content p {
+    font-size: 0.75rem;
+  }
+
+  .settings-panel {
+    padding: 1rem;
+  }
+
+  .settings-footer button {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
