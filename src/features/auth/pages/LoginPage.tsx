@@ -3,7 +3,7 @@ import { useAuth } from "../useAuth";
 import "./LoginPage.css";
 import { ROLE_ROUTE_MAP } from "../../../config/routes";
 import type { AuthData } from "../auth.types";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState<string>("");
@@ -112,6 +112,10 @@ function LoginPage() {
             {isLoading ? "Logging in..." : "Login"}
           </button>
         </form>
+        <div className="request-access">
+          <span>Don't have an account?</span>
+          <NavLink to="/requestAccess">Request access</NavLink>
+        </div>
       </div>
     </div>
   );

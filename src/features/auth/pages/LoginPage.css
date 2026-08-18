@@ -109,3 +109,26 @@
   background: #93c5fd;
   cursor: not-allowed;
 }
+.request-access {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.request-access a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.request-access a:hover {
+  text-decoration: underline;
+}
